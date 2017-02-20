@@ -1,37 +1,17 @@
-@import '../App.css';
-.root {
-    background: #FFF;
-    padding: 20px 0;
-    color: rgba(0, 0, 0, 0.7);
-    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.1);
-}
-.footerCopyright {
-    padding: 10px;
-    float: left;
-}
-.footerConnect {
-    padding: 5px;
-    float: right;
-}
-.footerList {
-    margin: 0;
-    padding: 0 10px;
-    display: inline-block;
-}
-.footerList__item {
-    list-style-type: none;
-    display: inline-block;
-}
-.footerConnect__image {
-    height: 30px;
-    margin: 2px;
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
 }
 
-@media (max-width: 767px) {
-    .footerCopyright,
-    .footerConnect {
-        text-align: center;
-        display: block;
-        float: none;
-    }
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
 }
