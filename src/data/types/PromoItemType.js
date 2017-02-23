@@ -3,8 +3,8 @@
  *
  * by Kemal
  *
- * 
- * 
+ *
+ *
  */
 
 import {
@@ -16,11 +16,23 @@ import {
 const PromoItemType = new ObjectType({
   name: 'PromoItem',
   fields: {
-    title: { type: new NonNull(StringType) },
+    title: {
+      type: StringType,
+      resolve(obj) {
+        return obj.title.rendered;
+      },
+    },
     link: { type: new NonNull(StringType) },
-    author: { type: StringType },
-    pubDate: { type: new NonNull(StringType) },
-    content: { type: StringType },
+    content: {
+      type: StringType,
+      resolve(obj) {
+        // escape html from this string: obj.content.rendered
+        return obj.content.rendered.replace(/<\/?[^>]+(>|$)/g, '');
+      },
+    },
+    // author: { type: StringType },
+    // date: { type: new NonNull(StringType) },
+    // content: { type: StringType },
   },
 });
 

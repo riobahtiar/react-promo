@@ -24,17 +24,17 @@ export default {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        query: '{promo{title,link,content},news{title,link,content}}',
+        query: '{promo{title,link,content}}',
       }),
       credentials: 'include',
     });
     const { data } = await resp.json();
-    console.log({data});
-    //console.log({data.news});
-    //if (!data || !data.news) throw new Error('Failed to load the news feed.');
+    console.log({ data });
+    // console.log({data.news});
+    // if (!data || !data.news) throw new Error('Failed to load the news feed.');
     return {
       title: 'Promo',
-      component: <Layout><Home news={data.news} /></Layout>,
+      component: <Layout><Home news={data.promo} /></Layout>,
     };
   },
 
