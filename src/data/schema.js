@@ -14,7 +14,7 @@ import {
 
 import me from './queries/me';
 import news from './queries/news';
-import wp from './queries/wp';
+import promo from './queries/promo';
 
 const schema = new Schema({
   query: new ObjectType({
@@ -22,6 +22,7 @@ const schema = new Schema({
     fields: {
       me,
       news,
+      promo,
     },
   }),
 });

@@ -9,18 +9,19 @@
 
 import { GraphQLList as List } from 'graphql';
 import fetch from '../../core/fetch';
-import NewsItemType from '../types/NewsItemType';
+import PromoItemType from '../types/PromoItemType';
 
 // Tokopedia Promo Posts
 const url = 'http://toped.rio.my.id/wp-json' +
+// const url = 'https://www.tokopedia.com/promo/wp-json' +
             '/wp/v2/posts';
 
 let items = [];
 let lastFetchTask;
 let lastFetchTime = new Date(1970, 0, 1);
 
-const news = {
-  type: new List(NewsItemType),
+const promo = {
+  type: new List(PromoItemType),
   resolve() {
     if (lastFetchTask) {
       return lastFetchTask;
@@ -31,11 +32,8 @@ const news = {
       lastFetchTask = fetch(url)
         .then(response => response.json())
         .then(data => {
-          if (data.status === 'ok') {
-            items = data.items;
-          }
-
-          return items;
+          console.log(data);
+          return data;
         })
         .finally(() => {
           lastFetchTask = null;
@@ -52,4 +50,4 @@ const news = {
   },
 };
 
-export default news;
+export default promo;
