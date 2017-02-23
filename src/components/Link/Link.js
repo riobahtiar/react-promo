@@ -23,6 +23,7 @@ class Link extends React.Component {
     to: PropTypes.string.isRequired,
     children: PropTypes.node,
     onClick: PropTypes.func,
+    className: PropTypes.string
   };
 
   handleClick = (event) => {
@@ -44,7 +45,7 @@ class Link extends React.Component {
 
   render() {
     const { to, children, ...props } = this.props;
-    return <a href={to} {...props} onClick={this.handleClick}>{children}</a>;
+    return <a href={to} {...props} onClick={this.handleClick} className={this.props.className}>{children}</a>;
   }
 }
 

@@ -1,38 +1,29 @@
-/**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
-import React from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Header.css';
-import Link from '../Link';
-import Navigation from '../Navigation';
-import logoUrl from './logo-small.png';
-import logoUrl2x from './logo-small@2x.png';
+import React from 'react'
+import withStyles from 'isomorphic-style-loader/lib/withStyles'
+import bs from 'bootstrap/dist/css/bootstrap.min.css'
+import s from './Header.css'
+import Link from '../Link'
+import Navigation from '../Navigation'
 
 class Header extends React.Component {
   render() {
+    const menus = [
+      { name: 'About', to: '/about' },
+      { name: 'Contact', to: '/contact' },
+      { name: 'Log In', to: '/login' }
+    ]
+
     return (
       <div className={s.root}>
-        <div className={s.container}>
-          <Navigation className={s.nav} />
-          <Link className={s.brand} to="/">
-            <img src={logoUrl} srcSet={`${logoUrl2x} 2x`} width="38" height="38" alt="React" />
-            <span className={s.brandTxt}>Your Company</span>
+        <div className={bs.container}>
+          <Navigation className={s.nav} bridgeWidget={false} menus={menus} />
+          <Link to="/">
+            <img src='https://ecs7.tokopedia.net/promo/assets/images/promo_logo.png' className={s.logo} alt="Tokopedia" />
           </Link>
-          <div className={s.banner}>
-            <h1 className={s.bannerTitle}>BananaReact</h1>
-            <p className={s.bannerDesc}>Complex web apps made easy</p>
-          </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default withStyles(s)(Header);
+export default withStyles(bs, s)(Header)
