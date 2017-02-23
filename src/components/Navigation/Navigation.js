@@ -7,21 +7,21 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import React, { PropTypes } from 'react'
-import cx from 'classnames'
-import withStyles from 'isomorphic-style-loader/lib/withStyles'
-import s from './Navigation.css'
-import Link from '../Link'
+import React, { PropTypes } from 'react';
+import cx from 'classnames';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import s from './Navigation.css';
+import Link from '../Link';
 
 class Navigation extends React.Component {
   static propTypes = {
     className: PropTypes.string,
     menus: PropTypes.array,
-    bridgeWidget: PropTypes.bool
+    bridgeWidget: PropTypes.bool,
   }
 
   render() {
-    const menus = this.props.menus || ''
+    const menus = this.props.menus || '';
 
     return (
       <div className={cx(s.root, this.props.className)} role="navigation">
@@ -29,8 +29,8 @@ class Navigation extends React.Component {
           { menus.map((menu, index) => <li key={`menu-${index}`} className={s['nav-list']}><Link className={s.link} to={menu.to}>{menu.name}</Link></li>) }
         </ul>
       </div>
-    )
+    );
   }
 }
 
-export default withStyles(s)(Navigation)
+export default withStyles(s)(Navigation);
