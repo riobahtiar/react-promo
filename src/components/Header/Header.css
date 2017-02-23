@@ -1,50 +1,18 @@
 @import '../variables.css';
-
 :root {
-  --brand-color: #61dafb;
+    --brand-color: #42B549;
 }
-
 .root {
-  background: #373277;
-  color: #fff;
+    background: #42B549;
+    color: #FFF;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-
-.container {
-  margin: 0 auto;
-  padding: 20px 0;
-  max-width: var(--max-content-width);
-}
-
-.brand {
-  color: color(var(--brand-color) lightness(+10%));
-  text-decoration: none;
-  font-size: 1.75em; /* ~28px */
-}
-
-.brandTxt {
-  margin-left: 10px;
-}
-
 .nav {
-  float: right;
-  margin-top: 6px;
+    float: right;
+    display: block;
 }
-
-.banner {
-  text-align: center;
-}
-
-.bannerTitle {
-  margin: 0;
-  padding: 10px;
-  font-weight: normal;
-  font-size: 4em;
-  line-height: 1em;
-}
-
-.bannerDesc {
-  padding: 0;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 1.25em;
-  margin: 0;
+.logo {
+    height: 30px;
 }
