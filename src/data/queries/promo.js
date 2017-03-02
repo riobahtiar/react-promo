@@ -12,7 +12,7 @@ import fetch from '../../core/fetch';
 import PromoItemType from '../types/PromoItemType';
 
 // Tokopedia Promo Posts
-const url = 'http://hc.stg.host/wp-json' +
+const url = 'http://promo.stg.host/wp-json' +
 // const url = 'https://www.tokopedia.com/promo/wp-json' +
             '/wp/v2/posts';
 // const url = 'https://api.rss2json.com/v1/api.json' +
@@ -33,7 +33,7 @@ const promo = {
       lastFetchTime = new Date();
       lastFetchTask = fetch(url)
         .then(response => response.json())
-        .then(data => data)
+        .then((data) => data)
         .finally(() => {
           // lastFetchTask = null;
         });

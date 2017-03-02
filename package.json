@@ -32,6 +32,8 @@
     "query-string": "^4.2.3",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
+    "react-infinite-scroller": "^1.0.7",
+    "react-lazyload": "^2.2.4",
     "sequelize": "^3.28.0",
     "source-map-support": "^0.4.6",
     "sqlite3": "^3.1.8",
