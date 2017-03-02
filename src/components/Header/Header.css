@@ -1,0 +1,18 @@
+@import '../variables.css';
+:root {
+    --brand-color: #42B549;
+}
+.root {
+    background: #42B549;
+    color: #FFF;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.nav {
+    float: right;
+    display: block;
+}
+.logo {
+    height: 30px;
+}

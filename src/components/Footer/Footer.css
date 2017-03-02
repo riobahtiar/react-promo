@@ -1,0 +1,39 @@
+.root {
+    background: #FFF;
+    padding: 20px;
+}
+.container {
+    margin: 0 auto;
+    max-width: 1170px;
+}
+.footerList {
+    display: inline-block;
+    padding: 0 5px;
+    margin: 0;
+}
+.footerList__item {
+    list-style-type: none;
+    display: inline-block;
+}
+.footerCopyright {
+    float: left;
+    padding: 10px;
+}
+.footerConnect {
+    float: right;
+    padding: 5px;
+}
+.footerConnect__image {
+    height: 30px;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+@media (max-width: 767px) {
+    .footerCopyright,
+    .footerConnect {
+        text-align: center;
+        display: block;
+        float: none;
+    }
+}
